@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Api_Rest.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -13,6 +14,10 @@ namespace Api_Rest
 
             // Rutas de API web
             config.MapHttpAttributeRoutes();
+
+            //JWT
+            config.MessageHandlers.Add(new TokenValidationHandler());
+            //
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
