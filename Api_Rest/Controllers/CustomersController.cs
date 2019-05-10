@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using System.Linq;
 using Api_Rest.Context;
+using Newtonsoft.Json;
 
 namespace Api_Rest.Controllers
 {
@@ -18,8 +19,13 @@ namespace Api_Rest.Controllers
         [HttpGet]
         public IHttpActionResult GetAll()
         {
-            var customers = db.customers.ToList();
-            return Ok(customers);
+            //var customers = db.customers.ToList();
+            var customers = (
+                             
+                             from c in db.customers
+                             join t in db.TypeCustomers on c.IdT equals t.IdT select new {c.Id_C , c.Name}
+                             ).ToList();
+            return Ok(JsonConvert.SerializeObject(customers));
         }
     }
 }

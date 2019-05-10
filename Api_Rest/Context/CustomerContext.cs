@@ -10,5 +10,6 @@ namespace Api_Rest.Context
     public class Db_Context : DbContext
     {
         public DbSet<Customer> customers { get; set; }
+        public DbSet<TypeCustomer> TypeCustomers { get; set; }
     }
 }

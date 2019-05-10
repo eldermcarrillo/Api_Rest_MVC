@@ -209,6 +209,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TypeCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
